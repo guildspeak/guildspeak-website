@@ -12,7 +12,7 @@ module.exports = {
         use: ['awesome-typescript-loader']
       },
       {
-        test: /\.(png|gif|jpg|woff2|ttf|svg)$/,
+        test: /\.(woff2|ttf|svg|ico)$/,
         use: ['url-loader']
       },
       {
@@ -20,7 +20,7 @@ module.exports = {
         use: ['style-loader', { loader: 'css-loader', options: { importLoaders: 1 } }]
       },
       {
-        test: /\.(jpe?g|png|gif|svg)$/i,
+        test: /\.(jpe?g|png|gif)$/i,
         loaders: ['file-loader?hash=sha512&digest=hex&name=img/[hash].[ext]', 'image-webpack-loader?bypassOnDebug&optipng.optimizationLevel=7&gifsicle.interlaced=false']
       }
     ]

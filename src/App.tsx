@@ -1,9 +1,19 @@
 import * as React from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Loadable from 'react-loadable'
+import { AppWrapper } from './styles'
 
-class App extends React.Component {
-  render() {
-    return <div>guildspeak website</div>
-  }
-}
+const Home = Loadable({
+  loader: () => import('./views/Home'),
+  loading: () => <div />
+})
 
-export default App
+export default () => (
+  <AppWrapper>
+    <Router>
+      <Switch>
+        <Route exact={true} path="/" component={Home} />
+      </Switch>
+    </Router>
+  </AppWrapper>
+)
